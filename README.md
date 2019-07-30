@@ -54,7 +54,8 @@ To display the dialog all you have to do is include this view in your template:
 ```php
 //in your blade template
 @include('cookieConsent::index')
- 
+```
+
 Please be aware that the package does not provide any styling, this is something you'll need to do yourself.
 
 When the user clicks "Allow cookies" a `cookie_consent` cookie will be set and the dialog will be removed from the DOM. On the next request, Laravel will notice that the `cookie_consent` has been set and will not display the dialog again
