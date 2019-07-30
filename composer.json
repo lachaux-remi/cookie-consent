@@ -1,0 +1,56 @@
+{
+    "name": "lachaux-remi/cookie-consent",
+    "description": "Make your app comply with the crazy European union cookie law.",
+    "keywords": [
+        "cookie-consent",
+        "cookie",
+        "consent",
+        "laravel",
+        "lumen"
+    ],
+    "homepage": "https://github.com/LachauxRemi/cookie-consent",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lachaux Rémi",
+            "email": "contact@remi-lachaux.fr"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/database": "~5.8.0",
+        "illuminate/view": "~5.8.0",
+        "illuminate/cookie": "~5.8.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.2",
+        "orchestra/testbench": "v3.8.0",
+        "phpunit/phpunit": "~7.0",
+        "limedeck/phpunit-detailed-printer": "^4.1",
+        "squizlabs/php_codesniffer": "2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "LachauxRemi\\CookieConsent\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LachauxRemi\\CookieConsent\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "lint": "phpcs --ignore=*/resources/* --standard=PSR2 src/",
+        "lint-fix": "phpcbf --ignore=*/resources/* --standard=PSR2 src/"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LachauxRemi\\CookieConsent\\ServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
