@@ -1,9 +1,9 @@
-@if($cookieConsentConfig['enabled'] && ! $alreadyConsentedWithCookies)
+@if($cookieConsentConfig['enabled'] && !$alreadyConsentedWithCookies)
 
     @include('cookieConsent::dialogContents')
 
     <script type="text/javascript">
-        window.laravelCookieConsent = (function () {
+        window.cookieConsent = (function () {
             const COOKIE_VALUE = 1;
             const COOKIE_DOMAIN = '{{ config('session.domain') ?? request()->getHost() }}';
 
@@ -17,10 +17,9 @@
             }
 
             function hideCookieDialog() {
-                const dialogs = document.getElementsByClassName('js-cookie-consent');
-                for (let i = 0; i < dialogs.length; ++i) {
-                    dialogs[i].style.display = 'none';
-                }
+                document.querySelectorAll('[data-cookie-consent]').forEach(el => {
+                    el.style.display = 'none';
+                })
             }
 
             function setCookie(name, value, expirationInDays) {
@@ -36,10 +35,9 @@
                 hideCookieDialog();
             }
 
-            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
-            for (let i = 0; i < buttons.length; ++i) {
-                buttons[i].addEventListener('click', consentWithCookies);
-            }
+            document.querySelectorAll('[data-cookie-consent-agree]').forEach(el => {
+                el.addEventListener('click', consentWithCookies)
+            });
 
             return {
                 consentWithCookies: consentWithCookies,

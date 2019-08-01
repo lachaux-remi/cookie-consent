@@ -1,11 +1,15 @@
-<div class="js-cookie-consent cookie-consent">
+<div data-cookie-consent class="card shadow fixed-bottom" style="width: 335px; bottom: 30px; left: 30px;">
+    <div class="card-header">
+        @lang('cookieConsent::cookie.title')
+    </div>
 
-    <span class="cookie-consent__message">
+    <div class="card-body">
         @lang('cookieConsent::cookie.message')
-    </span>
+    </div>
 
-    <button class="js-cookie-consent-agree cookie-consent__agree">
-        @lang('cookieConsent::cookie.agree')
-    </button>
-
+    <div class="card-footer d-flex flex-row justify-content-between">
+        <button data-cookie-consent-agree class="btn btn-sm btn-primary">
+            @lang('cookieConsent::cookie.agree')
+        </button>
+    </div>
 </div>

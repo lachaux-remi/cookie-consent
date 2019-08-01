@@ -24,7 +24,7 @@ class MiddlewareTest extends TestCase
         });
         $content = $result->getContent();
         $this->assertStringContainsString("<html lang='en'><body>", $content);
-        $this->assertStringContainsString('window.laravelCookieConsent', $content);
+        $this->assertStringContainsString('window.cookieConsent', $content);
         $this->assertStringContainsString("</body></html>", $content);
     }
 
