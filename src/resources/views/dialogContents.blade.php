@@ -7,7 +7,7 @@
         @lang('cookieConsent::cookie.message')
     </div>
 
-    <div class="card-footer d-flex flex-row justify-content-between">
+    <div class="card-footer d-flex justify-content-end">
         <button data-cookie-consent-agree class="btn btn-sm btn-primary">
             @lang('cookieConsent::cookie.agree')
         </button>
